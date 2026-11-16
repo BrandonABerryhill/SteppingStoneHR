@@ -46,7 +46,7 @@ Batch names: `freq_cpp` is 4,000 replicates on the compiled engine and `freq_R` 
 - R. The version tested is 4.6.0.
 - A C++17 compiler for the `hrsim` package. On Windows this is Rtools for the installed R version; on macOS, the Xcode command line tools.
 - Pandoc, which `rmarkdown` needs to knit the notebook (RStudio includes it).
-- The Arial font for the figures. Without it the figure scripts fall back on the default sans-serif font and say so.
+- The Arial font for the figures. Without it the figure scripts fall back on the default sans-serif font.
 - The R packages below.
 
 One configuration was tested: an Apple silicon Mac (14 cores) running macOS 27.0.1, R 4.6.0 (aarch64-apple-darwin23), Apple clang 21.0.0 and pandoc 3.8.3. These are the package versions tested:
