@@ -1,0 +1,3 @@
+useDynLib(hrsim, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+export(simulate_hr, run_sim, debug_step1, debug_step1_fired)

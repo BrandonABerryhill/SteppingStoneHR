@@ -1,0 +1,31 @@
+# Compiler settings for the C++ sources in this folder: simulate_hr.cpp and
+# the generated RcppExports.cpp.
+
+# Compile as C++17. simulate_hr.cpp writes the constant 2^-53 of its random
+# number generator as a hexadecimal floating-point literal (0x1.0p-53), which
+# is part of standard C++ only from C++17 on.
+CXX_STD = CXX17
+
+# -ffp-contract=off stops the compiler from contracting a multiplication and
+# an addition, a * b + c, into a single fused multiply-add, which rounds once
+# where the two operations performed separately round twice. The agreement
+# between the two engines reported in the Methods of the paper was obtained
+# with this flag, which the Methods name.
+PKG_CXXFLAGS = -ffp-contract=off
+
+# -O3 sets the optimisation level, for speed. It is set through CXXFLAGS and
+# not in PKG_CXXFLAGS because R puts PKG_CXXFLAGS before CXXFLAGS on the
+# compile line and, where two -O options are given, the last one takes
+# effect: an -O3 in PKG_CXXFLAGS would lose to any -O level in CXXFLAGS.
+# `override` is needed because, for a package with CXX_STD = CXX17, R sets
+# CXXFLAGS on the make command line, where an ordinary assignment in this
+# file would have no effect.
+override CXXFLAGS += -O3
+
+# The same -O3 for CXX17FLAGS, the variable from which R fills CXXFLAGS in a
+# C++17 build. This file is read before R's own configuration file
+# (Makeconf), and make ignores an ordinary assignment to a variable that has
+# been set with `override`. The value R's configuration assigns to
+# CXX17FLAGS is therefore not used at all: the variable holds -O3 alone, and
+# CXXFLAGS on the compile line is -O3 -O3.
+override CXX17FLAGS += -O3

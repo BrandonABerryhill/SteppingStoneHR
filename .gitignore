@@ -1,0 +1,22 @@
+# Knitted notebook, written beside SteppingStone.Rmd by a knit
+SteppingStone.html
+
+# PDF copies of the figures, which the figure scripts write beside the PNG
+# files where R's cairo PDF device can be opened
+figures/*.pdf
+
+# Output folder of a re-simulation (the notebook parameter resim_dir)
+results_resimulated/
+
+# R session history and saved workspace
+.Rhistory
+.RData
+
+# RStudio project state
+.Rproj.user/
+
+# macOS folder metadata
+.DS_Store
+
+# Default graphics device output of a non-interactive R session
+Rplots.pdf

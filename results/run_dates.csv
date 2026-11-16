@@ -1,0 +1,17 @@
+batch,run_date,source
+S1_freq_cpp,2026-06-12,manifest
+S1_freq_R,2026-06-12,manifest
+S1_traj300,2026-06-17,manifest
+S1_long,2026-06-17,manifest
+S2_freq_cpp,2026-06-15,manifest
+S2_freq_R,2026-06-15,manifest
+S2_long,2026-06-17,manifest
+omega0_freq_cpp,2026-06-17,manifest
+omega0_freq_R,2026-06-17,manifest
+omega0_traj300,2026-06-17,manifest
+omega0_long,2026-06-18,manifest
+sweep_S1,2026-06-20,dated folder name
+long_run,2026-05-25,file timestamp
+Fig 3C,2026-06-28,file timestamp of the code that drew the published figure
+Supp Table 1,2026-06-12,date of the Scenario 1 frequency batch
+Supp Table 2,2026-06-12,date of the Scenario 1 frequency batch

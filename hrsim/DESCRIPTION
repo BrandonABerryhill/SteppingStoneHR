@@ -1,0 +1,27 @@
+Package: hrsim
+Type: Package
+Title: Simulation Engine for 'Unstable Heteroresistance as a Stepping
+    Stone to Stable Resistance via Compensatory Mutations'
+Version: 0.1.0
+Authors@R: person("Brandon A.", "Berryhill", email = "Brandon.Berryhill@imbim.uu.se",
+                  role = c("aut", "cre"))
+Maintainer: Brandon A. Berryhill <Brandon.Berryhill@imbim.uu.se>
+Description: Compiled (C++, via 'Rcpp') simulation engine for the model of
+    heteroresistance with compensatory mutations in Berryhill and Andersson
+    (2026) <doi:10.64898/2026.10.08.756632>, "Unstable Heteroresistance as a
+    Stepping Stone to Stable Resistance via Compensatory Mutations". The
+    model follows twenty bacterial states, a limiting resource, an antibiotic
+    and beta-lactamase under serial transfer, by fixed-step Euler integration
+    with a Monte Carlo transition layer. simulate_hr() runs one replicate,
+    run_sim() takes the named arguments of the R reference engine and
+    calls simulate_hr() with the unpacked vectors and scalars, and
+    debug_step1() and debug_step1_fired() expose the first step to the
+    package's tests. Each call runs one replicate on one thread. The C++
+    source was translated from the R reference implementation with the
+    assistance of a generative AI model (Claude Opus 4.8, Anthropic) and was
+    verified against that reference before any results were generated from
+    it, as described in the Methods of the paper.
+License: MIT + file LICENSE
+Imports: Rcpp
+LinkingTo: Rcpp
+Encoding: UTF-8
